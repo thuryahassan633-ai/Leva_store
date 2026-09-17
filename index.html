@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Leva | ليڤـا - توزيعات وهدايا وتفاصيل مميزة للمناسبات السعيدة">
+  <title>Leva | ليڤـا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">تفاصيل صغيرة • تصنع ذكريات كبيرة ♡</div>
+
+  <header class="header">
+    <button class="icon-btn menu-btn" aria-label="القائمة">☰</button>
+    <nav class="nav right-nav">
+      <a class="active" href="#home">الرئيسية</a>
+      <a href="#shop">المتجر</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <a class="logo" href="#home" aria-label="Leva">
+      <span>Leva</span><small>ليڤـا</small>
+    </a>
+
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="بحث" id="searchBtn">⌕</button>
+      <button class="cart-btn" id="cartBtn" aria-label="السلة">🛍 <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">LEVA • MORE THAN JUST GIFTS</span>
+        <h1>فرحة عمر،<br><em>بأنامل ليڤـا تُرسم</em></h1>
+        <p>توزيعات وهدايا وتفاصيل مميزة<br>تصنع ذكرى أجمل.</p>
+        <a class="btn" href="#shop">تسوقي الآن <span>🛍</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="هدايا وتوزيعات ليڤـا">
+        <div class="gift gift-a">🎁</div>
+        <div class="gift gift-b">🎀</div>
+        <div class="butterfly">🦋</div>
+      </div>
+    </section>
+
+    <section class="categories container">
+      <article class="cat cat-yellow"><div class="cat-icon">🎁</div><h3>توزيعات المناسبات</h3><a href="#shop" data-filter="all">عرض المنتجات ←</a></article>
+      <article class="cat cat-pink"><div class="cat-icon">🧸</div><h3>استقبال المواليد</h3><a href="#shop" data-filter="birth">عرض المنتجات ←</a></article>
+      <article class="cat cat-purple"><div class="cat-icon">🎓</div><h3>التخرج</h3><a href="#shop" data-filter="grad">عرض المنتجات ←</a></article>
+      <article class="cat cat-cream"><div class="cat-icon">🦋</div><h3>تصاميم مخصصة</h3><a href="#custom">اطلبي تصميمك ←</a></article>
+    </section>
+
+    <section class="shop container" id="shop">
+      <div class="section-head">
+        <div><span class="mini-title">🦋 منتجات مميزة</span><h2>اختياراتنا لكِ من أجمل التفاصيل</h2></div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">الكل</button>
+          <button class="filter" data-filter="grad">التخرج</button>
+          <button class="filter" data-filter="birth">المواليد</button>
+          <button class="filter" data-filter="gifts">المناسبات</button>
+        </div>
+      </div>
+
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="custom container" id="custom">
+      <div class="custom-art">✎<span>♡</span></div>
+      <div>
+        <span class="mini-title">صُمم خصيصًا لكِ 🦋</span>
+        <h2>لديكِ فكرة مختلفة؟</h2>
+        <p>نساعدك نحول فكرتك إلى قطعة تحمل تفاصيل مناسبتك وتكون على ذوقك.</p>
+        <a class="btn light" href="https://wa.me/966500000000" target="_blank" rel="noopener">تواصلي معنا 💬</a>
+      </div>
+    </section>
+
+    <section class="about container" id="about">
+      <span class="mini-title">عن Leva</span>
+      <h2>تفاصيل تُهدى، وذكريات تبقى.</h2>
+      <p>في ليڤـا نهتم بالتفاصيل الصغيرة التي تجعل مناسبتك مختلفة. من التوزيعات وبروشات التخرج إلى استقبال المواليد والتصاميم الخاصة، نصنع كل قطعة بروح ناعمة ولمسة شخصية.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-brand"><div class="logo">Leva<small>ليڤـا</small></div><p>More than just gifts ♡</p></div>
+    <div class="footer-links">
+      <a href="#about">من نحن</a><a href="#contact">سياسة الطلب والاستبدال</a><a href="#contact">الأسئلة الشائعة</a><a href="https://wa.me/966500000000" target="_blank">واتساب</a>
+    </div>
+    <div class="social"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="TikTok">♪</a><a href="https://wa.me/966500000000" target="_blank" aria-label="WhatsApp">◉</a></div>
+    <small>© 2026 Leva | ليڤـا • جميع الحقوق محفوظة</small>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة المشتريات">
+    <div class="drawer-head"><h2>سلة مشترياتك</h2><button id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>الإجمالي</span><strong id="cartTotal">0 ر.س</strong></div>
+    <button class="checkout" id="checkout">إتمام الطلب عبر واتساب</button>
+  </aside>
+
+  <div class="modal" id="productModal">
+    <button class="modal-close" id="closeModal">×</button>
+    <div id="modalContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
