@@ -1,0 +1,38 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>لوحة تحكم Leva</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#FFF9F5;color:#3E3348;font-family:Arial,sans-serif}.wrap{max-width:1000px;margin:auto;padding:22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}h1{margin:0}.muted{color:#766a7d;font-size:13px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:0;border-radius:999px;padding:11px 17px;background:#fff;cursor:pointer}.tab.active,.primary{background:#9B7EDE;color:#fff}
+.card{background:#fff;border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 8px 28px #3e334810}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}input,textarea,select{width:100%;padding:11px;border:1px solid #e6ddea;border-radius:12px;background:#fff;font-size:15px}textarea{min-height:90px}
+button{cursor:pointer}.primary{border:0;border-radius:12px;padding:12px 18px;font-weight:700}.danger{background:#fff0f0;color:#a33;border:0;border-radius:10px;padding:9px 12px}
+.product{display:grid;grid-template-columns:80px 1fr auto;gap:14px;align-items:center;border:1px solid #eee4f0;border-radius:16px;padding:12px;margin-top:10px}.thumb{width:80px;height:80px;border-radius:13px;background:#f7eff9;display:grid;place-items:center;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hidden{display:none}.notice{padding:12px 14px;border-radius:12px;background:#f4f0fb;margin:12px 0}.preview{padding:20px;border-radius:16px;margin-top:15px;background:#FFF9F5}
+@media(max-width:600px){.product{grid-template-columns:65px 1fr}.product .actions{grid-column:1/-1}.thumb{width:65px;height:65px}}
+</style></head><body><div class="wrap">
+<div class="top"><div><h1>Leva | ليڤـا</h1><div class="muted">لوحة التحكم السهلة</div></div><button class="primary" onclick="location.href='index.html'">فتح المتجر ↗</button></div>
+<div class="notice">عدّلي المنتجات والألوان وبيانات المتجر من هنا. ملاحظة: هذه النسخة تحفظ التعديلات داخل المتصفح فقط. ربط قاعدة بيانات وإشعارات حقيقية سيكون في المرحلة التالية.</div>
+<div class="tabs"><button class="tab active" onclick="tab('products',this)">المنتجات</button><button class="tab" onclick="tab('design',this)">الألوان والتصميم</button><button class="tab" onclick="tab('store',this)">بيانات المتجر</button></div>
+<section id="products" class="card"><h2>المنتجات</h2><div id="list"></div><hr><h3>إضافة منتج</h3><div class="grid">
+<div><label>اسم المنتج</label><input id="pn"></div><div><label>التصنيف</label><select id="pc"><option>التخرج</option><option>استقبال المواليد</option><option>المناسبات</option><option>تصاميم مخصصة</option></select></div><div><label>السعر (ر.س)</label><input id="pp" type="number"></div><div><label>رابط الصورة</label><input id="pi"></div></div><div style="margin-top:12px"><label>الوصف</label><textarea id="pd"></textarea></div><div class="actions"><button class="primary" onclick="add()">إضافة المنتج</button></div></section>
+<section id="design" class="card hidden"><h2>الألوان</h2><div class="grid">
+<div><label>الأساسي</label><input id="c1" type="color"></div><div><label>الثانوي</label><input id="c2" type="color"></div><div><label>الذهبي</label><input id="c3" type="color"></div><div><label>الخلفية</label><input id="c4" type="color"></div><div><label>النص</label><input id="c5" type="color"></div></div><div id="prev" class="preview">معاينة اللون الأساسي</div><div class="actions"><button class="primary" onclick="saveTheme()">حفظ الألوان</button></div></section>
+<section id="store" class="card hidden"><h2>بيانات المتجر</h2><div class="grid"><div><label>اسم المتجر</label><input id="sn"></div><div><label>الاسم بالعربي</label><input id="sa"></div><div><label>واتساب الطلبات</label><input id="sw"></div></div><div style="margin-top:12px"><label>العبارة الرئيسية</label><input id="st"></div><div style="margin-top:12px"><label>الوصف</label><textarea id="sd"></textarea></div><div class="actions"><button class="primary" onclick="saveStore()">حفظ</button></div></section>
+</div>
+<script>
+const def={"brand": {"name": "Leva", "arabicName": "ليڤـا", "tagline": "توزيعات وهدايا تُرسم بالفرح", "description": "هدايا وتوزيعات مخصصة للتخرج، استقبال المواليد والمناسبات السعيدة."}, "theme": {"primary": "#9B7EDE", "secondary": "#F4C7D8", "accent": "#D9B86C", "cream": "#FFF9F5", "text": "#3E3348"}, "whatsapp": "966533817655", "products": [{"id": "grad-001", "name": "بروش تخرج مخصص", "category": "التخرج", "price": 25, "description": "بروش تخرج بتصميم واسم مخصص.", "image": "", "active": true}, {"id": "grad-002", "name": "كفر جوال بطباعة تخرج", "category": "التخرج", "price": 49, "description": "كفر جوال مخصص بطباعة تخرج أنيقة.", "image": "", "active": true}, {"id": "baby-001", "name": "توزيعات استقبال مولود", "category": "استقبال المواليد", "price": 35, "description": "توزيعات استقبال مولود بتفاصيل ناعمة ومخصصة.", "image": "", "active": true}, {"id": "occasion-001", "name": "توزيعات مناسبات سعيدة", "category": "المناسبات", "price": 30, "description": "توزيعات أنيقة للمناسبات والاحتفالات.", "image": "", "active": true}]};
+let d=JSON.parse(localStorage.getItem("levaAdmin")||"null")||def;
+function save(){localStorage.setItem("levaAdmin",JSON.stringify(d))}
+function render(){
+ list.innerHTML=d.products.map((p,i)=>`<div class="product"><div class="thumb">${p.image?`<img src="${p.image}">`:"🌸"}</div><div><b>${p.name}</b><div class="muted">${p.category} · ${p.price} ر.س</div><div class="muted">${p.description}</div></div><button class="danger" onclick="del(${i})">حذف</button></div>`).join("");
+ [c1.value,c2.value,c3.value,c4.value,c5.value]=[d.theme.primary,d.theme.secondary,d.theme.accent,d.theme.cream,d.theme.text];
+ sn.value=d.brand.name;sa.value=d.brand.arabicName;sw.value=d.whatsapp;st.value=d.brand.tagline;sd.value=d.brand.description;
+ prev.style.background=d.theme.primary;prev.style.color="#fff";
+}
+function add(){if(!pn.value.trim())return alert("اكتبي اسم المنتج");d.products.push({id:"p-"+Date.now(),name:pn.value.trim(),category:pc.value,price:Number(pp.value||0),description:pd.value.trim(),image:pi.value.trim(),active:true});save();pn.value=pp.value=pi.value=pd.value="";render();alert("تمت إضافة المنتج")}
+function del(i){if(confirm("حذف المنتج؟")){d.products.splice(i,1);save();render()}}
+function saveTheme(){d.theme={primary:c1.value,secondary:c2.value,accent:c3.value,cream:c4.value,text:c5.value};save();render();alert("تم حفظ الألوان")}
+function saveStore(){d.brand.name=sn.value.trim();d.brand.arabicName=sa.value.trim();d.brand.tagline=st.value.trim();d.brand.description=sd.value.trim();d.whatsapp=sw.value.replace(/\D/g,"");save();alert("تم حفظ البيانات")}
+function tab(id,b){document.querySelectorAll("section").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
+render();
+</script></body></html>
