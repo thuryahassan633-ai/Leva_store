@@ -88,7 +88,7 @@ document.getElementById("checkout").onclick=()=>{
   const lines=cart.map(x=>{const p=products.find(y=>y.id===x.id);return `• ${p.name} × ${x.qty} = ${p.price*x.qty} ر.س`}).join("\n");
   const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
   const msg=`مرحبًا Leva 🌷 أود طلب:\n${lines}\n\nالإجمالي: ${total} ر.س\nأرغب بتأكيد الطلب.`;
-  window.open(`https://wa.me/966500000000?text=${encodeURIComponent(msg)}`,"_blank");
+  window.open(`https://wa.me/966533817655?text=${encodeURIComponent(msg)}`,"_blank");
 };
 document.getElementById("searchBtn").onclick=()=>{
   const q=prompt("اكتبي اسم المنتج الذي تبحثين عنه:");

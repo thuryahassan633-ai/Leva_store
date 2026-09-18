@@ -1,0 +1,54 @@
+{
+  "brand": {
+    "name": "Leva",
+    "arabicName": "ليڤـا",
+    "tagline": "توزيعات وهدايا تُرسم بالفرح",
+    "description": "هدايا وتوزيعات مخصصة للتخرج، استقبال المواليد والمناسبات السعيدة."
+  },
+  "theme": {
+    "primary": "#9B7EDE",
+    "secondary": "#F4C7D8",
+    "accent": "#D9B86C",
+    "cream": "#FFF9F5",
+    "text": "#3E3348"
+  },
+  "whatsapp": "966533817655",
+  "products": [
+    {
+      "id": "grad-001",
+      "name": "بروش تخرج مخصص",
+      "category": "التخرج",
+      "price": 25,
+      "description": "بروش تخرج بتصميم واسم مخصص.",
+      "image": "",
+      "active": true
+    },
+    {
+      "id": "grad-002",
+      "name": "كفر جوال بطباعة تخرج",
+      "category": "التخرج",
+      "price": 49,
+      "description": "كفر جوال مخصص بطباعة تخرج أنيقة.",
+      "image": "",
+      "active": true
+    },
+    {
+      "id": "baby-001",
+      "name": "توزيعات استقبال مولود",
+      "category": "استقبال المواليد",
+      "price": 35,
+      "description": "توزيعات استقبال مولود بتفاصيل ناعمة ومخصصة.",
+      "image": "",
+      "active": true
+    },
+    {
+      "id": "occasion-001",
+      "name": "توزيعات مناسبات سعيدة",
+      "category": "المناسبات",
+      "price": 30,
+      "description": "توزيعات أنيقة للمناسبات والاحتفالات.",
+      "image": "",
+      "active": true
+    }
+  ]
+}
