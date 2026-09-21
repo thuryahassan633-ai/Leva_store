@@ -1,0 +1,24 @@
+LEVA | ملفات الربط الجاهزة مع Supabase
+
+تم وضع بيانات مشروع Supabase داخل supabase-config.js.
+
+مهم:
+- Project URL المستخدم في الاتصال هو https://bwadfheopabpcmiwfvvw.supabase.co
+- لا نستخدم /rest/v1/ في Project URL داخل createClient.
+- تم استخدام Publishable key فقط.
+- لا تضعي Secret key أو service_role key في GitHub.
+
+قبل رفع الملفات إلى GitHub تأكدي من أن الملفات موجودة مباشرة داخل جذر المستودع:
+index.html
+style.css
+script.js
+admin.html
+admin.js
+supabase-config.js
+
+بعد الرفع:
+1) افتحي رابط GitHub Pages.
+2) افتحي /admin.html.
+3) سجلي الدخول بالبريد وكلمة المرور اللذين أنشأتهما في Supabase Authentication.
+4) إذا كان الحساب موجودًا في public.admins ستفتح لوحة التحكم.
+5) من لوحة التحكم يمكن تعديل الهوية والألوان وإضافة المنتجات ورفع صورها إلى bucket باسم products.
