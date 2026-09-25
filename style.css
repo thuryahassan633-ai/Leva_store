@@ -31,30 +31,39 @@ body{color:var(--text);background:var(--cream)}
 .cat-purple{background:color-mix(in srgb,var(--primary) 15%,var(--cream))}
 footer{background:var(--secondary);color:var(--text)}
 .footer-links a:hover{color:var(--primary)}
-/* LEVA - Fix banner visibility */
 
-.hero,
-.hero-banner,
-.banner,
-.home-banner {
-    opacity: 1 !important;
+/* LEVA banner clarity fix */
+.hero.has-banner{
+  background-color:#fff !important;
+  opacity:1 !important;
+  filter:none !important;
 }
-
-.hero::before,
-.hero::after,
-.hero-banner::before,
-.hero-banner::after,
-.banner::before,
-.banner::after,
-.home-banner::before,
-.home-banner::after {
-    opacity: 1 !important;
+.hero.has-banner::before,
+.hero.has-banner::after{
+  display:none !important;
+  opacity:0 !important;
 }
-
-.hero img,
-.hero-banner img,
-.banner img,
-.home-banner img {
-    opacity: 1 !important;
-    filter: none !important;
+.hero.has-banner .hero-copy{
+  background:rgba(255,255,255,.88);
+  padding:24px 28px;
+  border-radius:24px;
+  box-shadow:0 8px 30px rgba(70,45,70,.10);
+}
+.hero.has-banner .hero-copy,
+.hero.has-banner .hero-copy *{
+  opacity:1 !important;
+}
+.hero.has-banner .hero-art{
+  display:none !important;
+}
+@media(max-width:850px){
+  .hero.has-banner{
+    min-height:520px;
+    background-position:center !important;
+  }
+  .hero.has-banner .hero-copy{
+    width:calc(100% - 28px);
+    padding:22px 18px;
+    background:rgba(255,255,255,.88);
+  }
 }
