@@ -31,3 +31,30 @@ body{color:var(--text);background:var(--cream)}
 .cat-purple{background:color-mix(in srgb,var(--primary) 15%,var(--cream))}
 footer{background:var(--secondary);color:var(--text)}
 .footer-links a:hover{color:var(--primary)}
+/* LEVA - Fix banner visibility */
+
+.hero,
+.hero-banner,
+.banner,
+.home-banner {
+    opacity: 1 !important;
+}
+
+.hero::before,
+.hero::after,
+.hero-banner::before,
+.hero-banner::after,
+.banner::before,
+.banner::after,
+.home-banner::before,
+.home-banner::after {
+    opacity: 1 !important;
+}
+
+.hero img,
+.hero-banner img,
+.banner img,
+.home-banner img {
+    opacity: 1 !important;
+    filter: none !important;
+}
